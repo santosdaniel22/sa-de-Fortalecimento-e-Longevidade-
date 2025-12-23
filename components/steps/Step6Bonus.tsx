@@ -7,9 +7,9 @@ interface Step6Props {
 
 const Step6Bonus: React.FC<Step6Props> = ({ onNext }) => {
   const bonuses = [
-    { title: "Protocolo 'Sono Profundo'", value: "R$ 197,00", desc: "A ciência para desligar sua mente e regenerar seu corpo em tempo recorde." },
-    { title: "Guia de Suplementação de Elite", value: "R$ 147,00", desc: "O que realmente funciona para otimizar hormônios e queima de gordura." },
-    { title: "Masterclass: Ativação Metabólica", value: "R$ 297,00", desc: "Um treinamento em vídeo avançado para destravar seu metabolismo em menos de 48 horas." }
+    { title: "Protocolo 'Sono Profundo'", value: "R$ 100,00", desc: "A ciência para desligar sua mente e regenerar seu corpo em tempo recorde." },
+    { title: "Guia de Suplementação de Elite", value: "R$ 100,00", desc: "O que realmente funciona para otimizar hormônios e queima de gordura." },
+    { title: "Masterclass: Ativação Metabólica", value: "R$ 75,00", desc: "Um treinamento em vídeo avançado para destravar seu metabolismo em menos de 48 horas." }
   ];
 
   return (
@@ -45,7 +45,7 @@ const Step6Bonus: React.FC<Step6Props> = ({ onNext }) => {
 
       <div className="glass p-6 rounded-3xl border border-white/5 mb-10 bg-white/[0.02]">
         <p className="text-lg font-bold">
-          Total em bônus: <span className="text-red-500 line-through">R$ 641,00</span> → <span className="text-green-400">R$ 0,00</span>
+          Total em bônus: <span className="text-red-500 line-through">R$ 275,00</span> → <span className="text-green-400">R$ 0,00</span>
         </p>
       </div>
 
