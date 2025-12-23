@@ -12,15 +12,16 @@ const Step4Engagement: React.FC<Step4Props> = ({ userResponse, onNext }) => {
   const [calculating, setCalculating] = useState(false);
 
   const questions = [
-    "Qual seu nível de disposição ao acordar?",
-    "Quantas vezes por semana você pratica exercícios?",
-    "Como você avalia sua qualidade de sono?"
+    "Qual é o seu nível de disposição ao acordar?",
+    "Com que frequência você pratica atividades físicas?",
+    "Como você avalia a profundidade do seu sono?"
   ];
 
   const handleCalculate = () => {
     setCalculating(true);
     const sum = answers.reduce((a, b) => a + b, 0);
-    const score = Math.round((sum / 15) * 10);
+    // Score becomes a value from 2.0 to 10.0
+    const score = parseFloat(((sum / 15) * 10).toFixed(1));
     
     setTimeout(() => {
       onNext(score);
@@ -30,8 +31,8 @@ const Step4Engagement: React.FC<Step4Props> = ({ userResponse, onNext }) => {
   return (
     <div className="animate-in fade-in duration-700">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold mb-4">Checklist de Vitalidade</h2>
-        <p className="text-white/50">Seja honesto consigo mesmo para um diagnóstico preciso.</p>
+        <h2 className="text-3xl font-bold mb-4">Mapeamento Biométrico</h2>
+        <p className="text-white/50">Responda com honestidade para que a IA processe seu diagnóstico.</p>
       </div>
 
       <div className="space-y-8 glass p-8 rounded-3xl border border-white/10 mb-8">
@@ -47,7 +48,7 @@ const Step4Engagement: React.FC<Step4Props> = ({ userResponse, onNext }) => {
                     newAnswers[qIdx] = val;
                     setAnswers(newAnswers);
                   }}
-                  className={`flex-1 py-3 rounded-xl border transition-all ${
+                  className={`flex-1 py-3 rounded-xl border transition-all font-bold ${
                     answers[qIdx] === val 
                       ? 'bg-green-500 border-green-400 text-white shadow-[0_0_15px_rgba(34,197,94,0.3)]' 
                       : 'bg-white/5 border-white/5 text-white/40 hover:bg-white/10'
@@ -57,9 +58,9 @@ const Step4Engagement: React.FC<Step4Props> = ({ userResponse, onNext }) => {
                 </button>
               ))}
             </div>
-            <div className="flex justify-between text-[10px] uppercase tracking-widest text-white/30 font-bold px-1">
-              <span>Baixo</span>
-              <span>Alto</span>
+            <div className="flex justify-between text-[10px] uppercase tracking-widest text-white/30 font-black px-1">
+              <span>Crítico</span>
+              <span>Excelente</span>
             </div>
           </div>
         ))}
@@ -68,19 +69,19 @@ const Step4Engagement: React.FC<Step4Props> = ({ userResponse, onNext }) => {
       <button
         disabled={answers.includes(0) || calculating}
         onClick={handleCalculate}
-        className={`w-full py-5 rounded-full font-bold text-lg transition-all ${
+        className={`w-full py-5 rounded-full font-black text-lg transition-all uppercase tracking-tight ${
           answers.includes(0) 
-            ? 'bg-white/10 text-white/20 cursor-not-allowed' 
-            : 'bg-white text-black hover:bg-green-400'
+            ? 'bg-white/10 text-white/20 cursor-not-allowed border border-white/5' 
+            : 'bg-white text-black hover:bg-green-400 shadow-xl'
         }`}
       >
         {calculating ? (
           <div className="flex items-center justify-center gap-3">
             <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-            Processando Biometria...
+            Processando Dados...
           </div>
         ) : (
-          "Ver meu Resultado"
+          "Gerar Meu Diagnóstico Especializado"
         )}
       </button>
     </div>

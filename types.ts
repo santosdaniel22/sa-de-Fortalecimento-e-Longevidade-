@@ -5,7 +5,8 @@ export enum FunnelStep {
   EDUCATION = 2,
   ENGAGEMENT = 3,
   AUTHORITY = 4,
-  CONVERSION = 5
+  BONUS = 5,
+  CONVERSION = 6
 }
 
 export interface UserResponse {

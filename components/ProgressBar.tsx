@@ -7,7 +7,7 @@ interface ProgressBarProps {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
-  const totalSteps = 6;
+  const totalSteps = 7;
   const progress = ((currentStep + 1) / totalSteps) * 100;
 
   return (
@@ -24,8 +24,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
           ))}
         </div>
         <div className="flex justify-between px-1">
-           <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Etapa {currentStep + 1} de {totalSteps}</span>
-           <span className="text-[10px] uppercase tracking-widest text-green-400/80 font-bold">{Math.round(progress)}% Completo</span>
+           <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Passo {currentStep + 1} de {totalSteps}</span>
+           <span className="text-[10px] uppercase tracking-widest text-green-400/80 font-bold">{Math.round(progress)}% Analisado</span>
         </div>
       </div>
     </div>

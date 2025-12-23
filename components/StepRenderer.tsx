@@ -6,7 +6,8 @@ import Step2Awareness from './steps/Step2Awareness';
 import Step3Education from './steps/Step3Education';
 import Step4Engagement from './steps/Step4Engagement';
 import Step5Authority from './steps/Step5Authority';
-import Step6Conversion from './steps/Step6Conversion';
+import Step6Bonus from './steps/Step6Bonus';
+import Step7Conversion from './steps/Step7Conversion';
 
 interface StepRendererProps {
   currentStep: FunnelStep;
@@ -27,8 +28,10 @@ const StepRenderer: React.FC<StepRendererProps> = ({ currentStep, userResponse, 
       return <Step4Engagement userResponse={userResponse} onNext={(score) => { updateResponse({ vitalityScore: score }); onNext(); }} />;
     case FunnelStep.AUTHORITY:
       return <Step5Authority userResponse={userResponse} onNext={onNext} />;
+    case FunnelStep.BONUS:
+      return <Step6Bonus onNext={onNext} />;
     case FunnelStep.CONVERSION:
-      return <Step6Conversion />;
+      return <Step7Conversion />;
     default:
       return null;
   }
