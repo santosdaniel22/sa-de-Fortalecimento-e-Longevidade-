@@ -35,9 +35,9 @@ const Step7Conversion: React.FC = () => {
       <div className="glass p-8 md:p-12 rounded-[2rem] border-2 border-green-400/30 mb-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl"></div>
         
-        {/* Adjusted Discount Badge to exactly 75% (475,20 -> 118,80) */}
+        {/* Adjusted Discount Badge: 1 - (118.80 / 350) = 66.05% */}
         <div className="absolute top-6 right-6 bg-red-600 text-white font-black text-sm px-3 py-1 rounded-lg rotate-12 shadow-xl animate-bounce z-20">
-          75% OFF
+          66% OFF
         </div>
 
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-green-500 text-black font-black text-sm uppercase rounded-full shadow-lg z-10">
@@ -45,14 +45,14 @@ const Step7Conversion: React.FC = () => {
         </div>
         
         <div className="mb-8 mt-4">
-          <p className="text-white/40 line-through text-lg mb-1">Valor Original: R$ 475,20</p>
+          <p className="text-white/40 line-through text-lg mb-1">Valor Original: R$ 350,00</p>
           <div className="flex items-center justify-center gap-2">
             <span className="text-2xl font-bold">12x de</span>
             <span className="text-6xl font-black text-white">R$ 9,90</span>
           </div>
           <div className="mt-2 space-y-1">
             <p className="text-green-400 font-bold">Sem juros no cartão ou R$ 118,80 à vista</p>
-            <p className="text-[10px] text-green-400/60 uppercase tracking-widest font-black">Você economiza R$ 356,40 hoje</p>
+            <p className="text-[10px] text-green-400/60 uppercase tracking-widest font-black">Você economiza R$ 231,20 hoje</p>
           </div>
         </div>
 
